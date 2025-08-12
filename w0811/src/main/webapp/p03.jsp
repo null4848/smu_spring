@@ -8,7 +8,9 @@
 	</head>
 	<body>
 	<%
-		response.sendRedirect();
+	  // 페이지를 지정한 url로 이동
+	  response.sendRedirect("p01.jsp");
+	
 	%>
 	
 	</body>

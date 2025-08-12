@@ -1,44 +1,46 @@
+<%@page import="java.util.Date"%> <!-- 지시자 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>쿠키확인</title>
-		<style>
-		  table,th,td{border:1px solid black; border-collapse: collapse;}
-		  th,td{width:200px; height:40px;}
-		  table{width:500px; margin:0 auto;}
-		</style>
+		<title>Insert title here</title>
 	</head>
 	<body>
-	<h2>쿠키모두삭제 설정 : 쿠키전체검색, 쿠키모두삭제</h2>
-	<%
-	  //모든 쿠키 출력
-	  Cookie[] cookies = request.getCookies();
-	  for(Cookie cookie : cookies){
+	<%-- jsp주석 : 소스보기에 보이지 않음 --%>
+	<!-- html주석 : 소스보기 보여짐 -->
+	<%! //선언식
+	   int a = 10;
+	   String method(){
+		   return "안녕하세요.<br>";
+	   }
 	%>
-		 <table>
-		   <tr>
-		     <th>번호</th>
-		     <th>쿠키값</th>
-		   </tr>
-		   <tr>
-		     <td><%= cookie.getName() %></td>
-		     <td><%= cookie.getValue() %></td>
-		   </tr>
-		 </table>
-		  
-	<% } %> 
-	<%
-	// 쿠키모두 삭제
-	for(Cookie cookie : cookies){ 
-	   cookie.setMaxAge(0);
-	   response.addCookie(cookie);
-	} 
+	<% //스크립트릿 : 자바소스 구현
+	  Date today = new Date();
+	
+	  for(int i=0;i<20;i++){
+		  out.println(i+"<br>");
+	  }
+	  
+	  out.println(method());
+	  
 	%>
-	<a href="./cookie_alldel.jsp">모든 쿠키삭제</a>
-
+	
+	<table>
+	   <tr>
+	     <td>변수</td>
+	     <td>값</td>
+	   </tr>
+	   <% for(int i=0;i<10;i++){ %>
+	   <tr>
+	     <!-- 표현식  -->
+	     <td><%= i %></td>
+	     <td><%= i*10 %></td>
+	   </tr>
+	   <%} %>
+	   
+	</table>
 	
 	</body>
 </html>
