@@ -4,20 +4,17 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>html -> servlet</title>
 	</head>
 	<body>
-		<h2>form</h2> <!-- 아이디-aaa 패스워드-111
-						    submit : w0807/FormPage post 전송하시오. -->
-		<form action="/w0807/FormPage" method ="post">
+		<form action="/w0807/FormPage" method ="get">
 			<label>아이디</label>
 			<input type="text" name="id">
+			<label>이름</label>
+			<input type="text" name="name">
 			<label>비밀번호</label>
 			<input type="text" name="pw">
 			<input type="submit" value="전송">
-			
 		</form>
-		 
-	
 	</body>
 </html>
